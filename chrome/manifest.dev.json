@@ -1,0 +1,45 @@
+{
+  "version": "0.0.0",
+  "name": "react-chrome-extension",
+  "manifest_version": 2,
+  "description": "react-chrome-extension",
+  "browser_action": {
+    "default_title": "打开窗口",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "web_accessible_resources": [
+    "inject.html"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "management",
+    "notifications",
+    "tabs",
+    "storage",
+    "contentSettings",
+    "declarativeContent",
+    "activeTab",
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/jquery-3.4.1.min.js",
+        "content/content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:3000 https://localhost:3000 https://www.unikev.com 'unsafe-eval'; connect-src http://localhost:3000 https://localhost:3000 https://www.unikev.com; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+}

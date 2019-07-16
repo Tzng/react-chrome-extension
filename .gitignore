@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+.DS_Store
+
+build/
+dev/
+
+*.zip
+*.crx
+*.pem
+update.xml
+.idea
+yarn.lock
+yarn-error.log

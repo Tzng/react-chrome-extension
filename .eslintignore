@@ -1,0 +1,6 @@
+/lambda/mock/**
+/scripts
+/config
+/mock
+gulpfile.js
+__tests__
